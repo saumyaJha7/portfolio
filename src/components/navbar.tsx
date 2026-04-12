@@ -63,7 +63,7 @@ export default function Navbar() {
           }}
           className="text-lg font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity"
         >
-          Portfolio<span className="text-muted-foreground">.</span>
+          Saumya Jha<span className="text-muted-foreground">.</span>
         </a>
 
         {/* Desktop nav */}

@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
+
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+import { cn } from "@/lib/utils";
 
 export default function Hero() {
   const handleScroll = (href: string) => {
@@ -11,7 +14,10 @@ export default function Hero() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const words = ["better", "modern", "scalable"];
+
   return (
+    
     <section
       id="home"
       className="relative flex min-h-screen items-center justify-center px-6"
@@ -35,36 +41,25 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-8 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
-        >
-          Hi, I&apos;m{" "}
-          <span className="relative">
-            Saumya Jha
-            <motion.span
-              className="absolute -bottom-1 left-0 h-[3px] w-full bg-foreground"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              style={{ transformOrigin: "left" }}
-            />
-          </span>
-        </motion.h1>
+        
 
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6 text-lg text-muted-foreground sm:text-xl max-w-xl mx-auto leading-relaxed"
-        >
-         Full Stack Developer specializing in Backend 
-          Development · Exploring GenAI, Cloud & DevOps
-        </motion.p>
+        <motion.h1
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      className={cn(
+        "relative mb-6 max-w-2xl text-left text-4xl leading-normal font-bold tracking-tight text-zinc-700 md:text-7xl dark:text-zinc-100",
+      )}
+      layout
+    >
+      <div className="inline-block">
+        Building <ContainerTextFlip words={words} /> solutions 
+
+      </div>
+    </motion.h1>
 
         {/* CTAs */}
         <motion.div
@@ -98,7 +93,7 @@ export default function Hero() {
           className="mt-8 flex items-center justify-center gap-3"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/saumyajha7"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full p-2.5 text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
@@ -107,7 +102,7 @@ export default function Hero() {
             <GithubIcon className="h-5 w-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/jhasaumya/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full p-2.5 text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
@@ -117,20 +112,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ArrowDown className="h-5 w-5 text-muted-foreground" />
-          </motion.div>
-        </motion.div>
+        
       </div>
     </section>
   );
