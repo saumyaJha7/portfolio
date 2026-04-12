@@ -8,6 +8,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { cn } from "@/lib/utils";
+import { FloatingDockContainer } from "./ui/floating-dock-container";
 
 export default function Hero() {
   const handleScroll = (href: string) => {
@@ -26,7 +27,6 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,_var(--border)_1px,_transparent_1px),_linear-gradient(to_bottom,_var(--border)_1px,_transparent_1px)] bg-[size:4rem_4rem] opacity-40" />
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
-        {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,32 +83,7 @@ export default function Hero() {
           </Button>
         </motion.div>
 
-        {/* Social icons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-8 flex items-center justify-center gap-3"
-        >
-          <a
-            href="https://github.com/saumyajha7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full p-2.5 text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
-            aria-label="GitHub"
-          >
-            <GithubIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jhasaumya/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full p-2.5 text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon className="h-5 w-5" />
-          </a>
-        </motion.div>
+        <FloatingDockContainer />
       </div>
     </section>
   );

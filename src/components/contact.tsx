@@ -34,6 +34,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6">
       <div className="mx-auto max-w-5xl">
         {/* Section header */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +49,6 @@ export default function Contact() {
           </h2>
           <Separator className="mt-6 w-12" />
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,9 +57,9 @@ export default function Contact() {
           className="mt-12 max-w-xl"
         >
           <p className="text-muted-foreground leading-relaxed">
-            I&apos;m always open to discussing new opportunities, interesting projects, 
-            or just having a chat about tech. Feel free to reach out through any of 
-            the channels below.
+            I&apos;m always open to discussing new opportunities, interesting
+            projects, or just having a chat about tech. Feel free to reach out
+            through any of the channels below.
           </p>
 
           {/* Social links */}
@@ -87,7 +87,10 @@ export default function Contact() {
           <div className="mt-8">
             <a
               href="mailto:your@email.com"
-              className={buttonVariants({ size: "lg" }) + " rounded-full px-8 font-medium"}
+              className={
+                buttonVariants({ size: "lg" }) +
+                " rounded-full px-8 font-medium"
+              }
             >
               <Mail className="mr-2 h-4 w-4" />
               Send me an email
