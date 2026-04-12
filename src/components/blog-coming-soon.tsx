@@ -34,7 +34,7 @@ export default function BlogComingSoon() {
         >
           <div className="relative w-full max-w-2xl">
             {/* Animated border glow */}
-            <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-transparent via-foreground/10 to-transparent animate-pulse-glow" />
+            <div className="absolute -inset-px rounded-2xl bg-linear-to-r from-transparent via-foreground/10 to-transparent animate-pulse-glow" />
 
             {/* Card */}
             <div className="relative rounded-2xl border border-border bg-card p-12 sm:p-16 text-center">
@@ -69,7 +69,11 @@ export default function BlogComingSoon() {
               {/* Icon */}
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-border bg-secondary"
               >
                 <Rss className="h-6 w-6 text-muted-foreground" />
@@ -77,9 +81,7 @@ export default function BlogComingSoon() {
 
               {/* Shimmer text */}
               <h3 className="text-2xl font-bold sm:text-3xl">
-                <span
-                  className="inline-block bg-gradient-to-r from-foreground via-muted-foreground to-foreground bg-clip-text text-transparent animate-shimmer"
-                >
+                <span className="inline-block bg-linear-to-r from-foreground via-muted-foreground to-foreground bg-clip-text text-transparent animate-shimmer">
                   Coming Soon
                 </span>
               </h3>
@@ -98,9 +100,9 @@ export default function BlogComingSoon() {
               </motion.div>
 
               <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-md mx-auto">
-                I&apos;m working on articles about backend development, cloud architecture, 
-                DevOps practices, and my journey with Generative AI. Stay tuned for
-                deep dives and tutorials.
+                I&apos;m working on articles about backend development, cloud
+                architecture, DevOps practices, and my journey with Generative
+                AI. Stay tuned for deep dives and tutorials.
               </p>
 
               {/* Decorative dots */}

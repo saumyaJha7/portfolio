@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +18,6 @@ export default function Hero() {
   const words = ["better", "modern", "scalable"];
 
   return (
-    
     <section
       id="home"
       className="relative flex min-h-screen items-center justify-center px-6"
@@ -41,27 +41,25 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        
+        <div>
+          <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row">
+            <LayoutTextFlip
+              text="Designing"
+              words={[
+                "powerful backend systems",
+                "distributed architectures",
+                "AI-integrated applications",
+                "production-ready infrastructure",
+              ]}
+            />
+          </motion.div>
+          <p className="mt-4 text-center text-base text-neutral-600 dark:text-neutral-400">
+            Shipping scalable, fault-tolerant, and maintainable codebases.
+            Building robust backend systems, experimenting with GenAI, and
+            deploying production-ready applications with DevOps workflows.
+          </p>
+        </div>
 
-        <motion.h1
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      className={cn(
-        "relative mb-6 max-w-2xl text-left text-4xl leading-normal font-bold tracking-tight text-zinc-700 md:text-7xl dark:text-zinc-100",
-      )}
-      layout
-    >
-      <div className="inline-block">
-        Building <ContainerTextFlip words={words} /> solutions 
-
-      </div>
-    </motion.h1>
-
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,8 +109,6 @@ export default function Hero() {
             <LinkedinIcon className="h-5 w-5" />
           </a>
         </motion.div>
-
-        
       </div>
     </section>
   );
