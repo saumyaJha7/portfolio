@@ -3,36 +3,32 @@
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Users, Award, Briefcase } from "lucide-react";
+import { Users, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const responsibilities = [
   {
-    role: "Technical Club Head",
-    organization: "College Tech Club",
-    period: "2025 — Present",
+    role: "Technical Lead",
+    organization: "CampusCrafters",
+    period: "March 2026 — Present",
     description:
-      "Leading a team of 20+ members in organizing technical events, hackathons, and workshops. Driving initiatives in web development, cloud computing, and open-source contributions.",
+      "I lead the technical development and architecture of a platform designed to strengthen the campus's growth eco-system.",
     icon: Users,
-    tags: ["Leadership", "Event Management", "Mentoring"],
+    tags: ["Leadership", "Decision Making", "Ownership"],
+    liveLink: "https://www.campuscrafters.com/",
+    linkedin: "https://www.linkedin.com/company/campuscraftersofficial/",
   },
   {
-    role: "AWS Cloud Club Lead",
-    organization: "AWS Cloud Club",
-    period: "2025 — Present",
+    role: "Development Lead",
+    organization: "AWS Cloud Club I2IT",
+    period: "Feb 2026 — Present",
     description:
-      "Steering cloud computing initiatives, hosting hands-on workshops on AWS services, and building a community of cloud enthusiasts. Organizing meetups and study groups.",
+      "Leading the development team of the AWS Cloud Club, mentoring members and guiding the creation of cloud-based projects using AWS technologies.",
     icon: Award,
-    tags: ["AWS", "Cloud Computing", "Community Building"],
-  },
-  {
-    role: "Open Source Contributor",
-    organization: "Various Projects",
-    period: "2024 — Present",
-    description:
-      "Contributing to open-source projects, participating in Hacktoberfest, and maintaining personal projects. Building tools that solve real developer problems.",
-    icon: Briefcase,
-    tags: ["Open Source", "Collaboration", "Git"],
-  },
+    tags: ["AWS", "Cloud Computing", "Ownership"],
+    liveLink: "https://awscloudclubi2it.xyz/",
+    linkedin: "https://www.linkedin.com/company/awsi2it/",
+  }
 ];
 
 export default function Responsibilities() {
@@ -100,6 +96,35 @@ export default function Responsibilities() {
                       {tag}
                     </Badge>
                   ))}
+                </div>
+
+                <div className="flex items-center gap-2 pt-3">
+                  {item.liveLink && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
+                      asChild
+                    >
+                      <a href={item.liveLink} target="_blank" rel="noopener noreferrer">
+                        
+                        Live Link
+                      </a>
+                    </Button>
+                  )}
+                  {item.linkedin && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
+                      asChild
+                    >
+                      <a href={item.linkedin} target="_blank" rel="noopener noreferrer">
+                        
+                        LinkedIn
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>
