@@ -104,7 +104,7 @@ export default function Responsibilities() {
                       variant="outline"
                       size="sm"
                       className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
-                      asChild
+                      
                     >
                       <a href={item.liveLink} target="_blank" rel="noopener noreferrer">
                         
@@ -117,7 +117,7 @@ export default function Responsibilities() {
                       variant="outline"
                       size="sm"
                       className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
-                      asChild
+                      
                     >
                       <a href={item.linkedin} target="_blank" rel="noopener noreferrer">
                         
