@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
@@ -61,9 +62,20 @@ export default function Navbar() {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="text-lg font-bold tracking-tight text-foreground hover:opacity-70 transition-opacity"
+          className="flex items-center gap-3 text-lg font-bold tracking-tight text-foreground hover:opacity-80 transition-all group"
         >
-          Saumya Jha<span className="text-muted-foreground">.</span>
+          <div className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-primary/10 group-hover:border-primary/30 transition-colors shadow-sm">
+            <Image
+              src="/favicon.ico"
+              alt="Saumya Jha"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <span className="hidden sm:inline-block">
+            Saumya Jha<span className="text-primary">.</span>
+          </span>
         </a>
 
         {/* Desktop nav */}
