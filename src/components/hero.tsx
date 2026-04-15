@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
-import { ContainerTextFlip } from "@/components/ui/container-text-flip";
-import { cn } from "@/lib/utils";
 import { FloatingDockContainer } from "./ui/floating-dock-container";
 
 export default function Hero() {
