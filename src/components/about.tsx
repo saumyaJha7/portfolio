@@ -18,13 +18,9 @@ const skills = [
   { name: "MongoDB / PostgreSQL", icon: Database },
   { name: "GenAI / LLMs", icon: Brain },
   { name: "Cloud / AWS", icon: Cloud },
-  { name: "Mobile Dev", icon: Smartphone },
 ];
 
 const techStack = [
-  "JavaScript",
-  "TypeScript",
-  "Python",
   "React",
   "Next.js",
   "Node.js",
@@ -65,22 +61,14 @@ export default function About() {
             viewport={{ once: true }}
             className="md:col-span-3 space-y-5 text-muted-foreground leading-relaxed"
           >
-            <p>
-              I&apos;m a <span className="text-foreground font-medium">2nd year BE IT student</span> and 
-              a passionate <span className="text-foreground font-medium">Full Stack Developer</span> with 
-              a strong specialization in backend development. I love crafting robust, scalable server-side 
-              architectures and APIs that power modern applications.
+            <p> 
+              Backend-focused developer specializing in designing <span className="text-foreground font-medium">scalable systems and APIs</span>. I work on structuring server-side architectures, handling data flow across services, and building applications that are reliable and easy to extend.
             </p>
             <p>
-              I&apos;ve also worked extensively in the <span className="text-foreground font-medium">Generative AI</span> segment, 
-              building intelligent applications that leverage LLMs and modern AI tooling. This intersection 
-              of backend systems and AI is where I find the most exciting work.
+              I&apos;ve built and experimented with <span className="text-foreground font-medium">Generative AI</span> applications using LLMs, integrating them into practical workflows rather than standalone demos. My work often sits at the intersection of backend systems and AI.
             </p>
             <p>
-              Beyond my core work, I have a deep interest in <span className="text-foreground font-medium">Cloud 
-              Computing</span>, <span className="text-foreground font-medium">DevOps</span> practices, 
-              and <span className="text-foreground font-medium">Mobile Development</span> — always expanding 
-              my toolkit and exploring new paradigms.
+              Currently,  I&apos;m deepening my understanding of <span className="text-foreground font-medium">cloud infrastructure and DevOps</span>—focusing on how systems are deployed, scaled, and maintained in production environments.
             </p>
           </motion.div>
 
