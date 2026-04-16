@@ -17,37 +17,21 @@ import { GithubIcon } from "@/components/icons";
 
 const projects = [
   {
-    title: "AI Chat Platform",
+    title: "tweetTube",
     description:
-      "A real-time chat application powered by LLMs with context-aware responses, streaming output, and conversation history management.",
-    tags: ["Next.js", "OpenAI", "Node.js", "MongoDB"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "Cloud Deploy Pipeline",
-    description:
-      "Automated CI/CD pipeline with Docker containerization, GitHub Actions workflows, and multi-environment deployment to AWS.",
-    tags: ["Docker", "AWS", "GitHub Actions", "Node.js"],
-    github: "https://github.com",
+      "A powerful backend project inspired by the best of Twitter and YouTube — built to handle real-time interactions, seamless content delivery, and scalable user engagement.",
+    tags: ["Express", "Node.js", "MongoDB"],
+    github: "https://github.com/saumyaJha7/tweetTube",
     live: "",
   },
   {
-    title: "REST API Microservices",
+    title: "Expense Tracker",
     description:
-      "A scalable microservices architecture with authentication, rate limiting, caching layers, and comprehensive API documentation.",
-    tags: ["Express", "PostgreSQL", "Redis", "Docker"],
-    github: "https://github.com",
-    live: "",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "This minimal, monochrome portfolio built with Next.js and shadcn/ui featuring smooth animations and dark mode support.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
-    github: "https://github.com",
-    live: "",
-  },
+      "A simple Python + Notion API project to track daily expenses and maintain a monthly total.This tool helps you record expenses with proper categorization.",
+    tags: ["Python", "Notion API"],
+    github: "https://github.com/saumyaJha7/Expense_Tracker_v1",
+    live: "#",
+  }
 ];
 
 export default function Projects() {
