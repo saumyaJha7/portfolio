@@ -3,10 +3,20 @@
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Users, Award } from "lucide-react";
+import { Users, Award , Code} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const responsibilities = [
+const experiences = [
+  {
+    role: "Open Source Contributor",
+    organization: "GirlScript Foundation",
+    period: "May 2026 — Present",
+    description:"Contributed to real-world open-source projects with production impact by building robust backend systems, debugging issues, and delivering features through GitHub pull requests. Collaborated closely with maintainers using industry-standard Git workflows.",
+    icon: Code,
+    tags: ["Open Source", "Backend Development", "Collaboration"],
+    liveLink: "https://gssoc.girlscript.org/profile/e2d12238-3eaf-4fb6-9af1-4e9caf35f128",
+    linkedin: "https://www.linkedin.com/company/girlscriptsoc/posts/?feedView=all"
+  },
   {
     role: "Technical Lead",
     organization: "CampusCrafters",
@@ -31,11 +41,10 @@ const responsibilities = [
   }
 ];
 
-export default function Responsibilities() {
+export default function Experiences() {
   return (
-    <section id="responsibilities" className="py-24 px-6">
+    <section id="experiences" className="py-24 px-6">
       <div className="mx-auto max-w-5xl">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +52,7 @@ export default function Responsibilities() {
           viewport={{ once: true }}
         >
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            Responsibilities
+            Experiences
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
             Roles & leadership.
@@ -51,9 +60,8 @@ export default function Responsibilities() {
           <Separator className="mt-6 w-12" />
         </motion.div>
 
-        {/* Timeline */}
         <div className="mt-12 space-y-0">
-          {responsibilities.map((item, i) => (
+          {experiences.map((item, i) => (
             <motion.div
               key={item.role}
               initial={{ opacity: 0, x: -20 }}
@@ -62,17 +70,15 @@ export default function Responsibilities() {
               viewport={{ once: true }}
               className="relative pl-8 pb-12 last:pb-0"
             >
-              {/* Timeline line */}
-              {i < responsibilities.length - 1 && (
-                <div className="absolute left-[11px] top-8 bottom-0 w-px bg-border" />
+              
+              {i < experiences.length - 1 && (
+                <div className="absolute left-2.75 top-8 bottom-0 w-px bg-border" />
               )}
 
-              {/* Timeline dot */}
               <div className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card">
                 <item.icon className="h-3 w-3 text-muted-foreground" />
               </div>
 
-              {/* Content */}
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h3 className="text-base font-semibold">{item.role}</h3>

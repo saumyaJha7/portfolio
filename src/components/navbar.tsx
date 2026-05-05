@@ -16,7 +16,7 @@ import {
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
-  { label: "Responsibilities", href: "#responsibilities" },
+  { label: "Experiences", href: "#experiences" },
   { label: "Blog", href: "#blog" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -55,7 +55,6 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        {/* Logo */}
         <a
           href="#home"
           onClick={(e) => {
@@ -78,7 +77,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -131,7 +129,6 @@ export default function Navbar() {
           )}
         </ul>
 
-        {/* Mobile nav */}
         <div className="flex items-center gap-2 md:hidden">
           {mounted && (
             <Button
