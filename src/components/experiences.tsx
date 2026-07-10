@@ -8,16 +8,6 @@ import { Button } from "@/components/ui/button";
 
 const experiences = [
   {
-    role: "Open Source Contributor",
-    organization: "GirlScript Foundation",
-    period: "May 2026 — Present",
-    description:"Contributed to real-world open-source projects with production impact by building robust backend systems, debugging issues, and delivering features through GitHub pull requests. Collaborated closely with maintainers using industry-standard Git workflows.",
-    icon: Code,
-    tags: ["Open Source", "Backend Development", "Collaboration"],
-    liveLink: "https://gssoc.girlscript.org/profile/e2d12238-3eaf-4fb6-9af1-4e9caf35f128",
-    linkedin: "https://www.linkedin.com/company/girlscriptsoc/posts/?feedView=all"
-  },
-  {
     role: "Technical Lead",
     organization: "CampusCrafters",
     period: "March 2026 — Present",
