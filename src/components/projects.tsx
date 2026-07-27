@@ -17,11 +17,28 @@ import { GithubIcon } from "@/components/icons";
 
 const projects = [
   {
+    title: "DebtGuardian",
+    description:
+      "A legal platform for settling debts and consulting with lawyers — helping users navigate debt resolution with expert guidance and streamlined workflows.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    github: "https://github.com/saumyaJha7/debtGuardian",
+    live: "https://debt-guardian.vercel.app/",
+  },
+  {
     title: "tweetTube",
     description:
       "A powerful backend project inspired by the best of Twitter and YouTube — built to handle real-time interactions, seamless content delivery, and scalable user engagement.",
     tags: ["Express", "Node.js", "MongoDB"],
     github: "https://github.com/saumyaJha7/tweetTube",
+    live: "",
+  },
+  
+  {
+    title: "NextJs Auth",
+    description:
+      "A production-ready authentication system built entirely in Next.js — featuring secure login, JWT sessions, email verification, and MongoDB-backed user management.",
+    tags: ["Next.js", "JWT", "MongoDB"],
+    github: "https://github.com/saumyaJha7/NextJs-Auth",
     live: "",
   },
   {
@@ -30,8 +47,8 @@ const projects = [
       "A simple Python + Notion API project to track daily expenses and maintain a monthly total.This tool helps you record expenses with proper categorization.",
     tags: ["Python", "Notion API"],
     github: "https://github.com/saumyaJha7/Expense_Tracker_v1",
-    live: "#",
-  }
+    live: "",
+  },
 ];
 
 export default function Projects() {
