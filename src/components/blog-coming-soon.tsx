@@ -4,13 +4,19 @@ import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import { BlogCard } from "@/components/blog-card";
 
-// Blog data - Update this array with your blog posts
+
 const blogs = [
   {
-    id: "1",
+    id : "1",
+    title : "How whatsapp works even without internet ?",
+    imageUrl : "/blog02Cover.png",
+    articleUrl : "https://medium.com/@jhasaumya554/how-whatsapp-works-even-without-internet-eedd556f76a0"
+  },
+  {
+    id: "2",
     title: "Why React is Fast: Understanding React Internals",
     imageUrl: "/blog01Cover.png",
-    hashnodeUrl: "https://why-react-is-fast.hashnode.dev/why-react-is-fast-understanding-react-internals",
+    articleUrl: "https://medium.com/@jhasaumya554/why-react-is-fast-understanding-react-internals-ee67e84f1f7a",
   },
 ];
 
