@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import { Backdrop } from "@/components/backdrop";
-import { Highlight } from "@/components/ui/highlight";
+import SiteHero from "@/components/site-hero";
+import { FooterBottom } from "@/components/footer-bottom";
 import About from "@/components/about";
 import Projects from "@/components/projects";
 import Experiences from "@/components/experiences";
@@ -66,19 +66,7 @@ export default function Home() {
       <Backdrop />
       <Navbar logo={<SiteLogo />} layout="menu" links={NAV_LINKS} />
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col p-6 sm:p-12">
-        <div id="home" className="flex min-h-[80vh] items-center py-12">
-          <Hero
-            badge="Open to opportunities"
-            title="Designing powerful backend systems"
-            primary={{ label: "View projects", href: "#projects" }}
-            secondary={{ label: "Contact me", href: "#contact" }}
-          >
-            <>
-              Shipping <Highlight>scalable and maintainable codebases</Highlight> with
-              robust APIs, GenAI experiments, and production ready DevOps workflows.
-            </>
-          </Hero>
-        </div>
+        <SiteHero />
         <Projects />
         <Experiences />
         <BlogComingSoon />
@@ -92,6 +80,7 @@ export default function Home() {
         owner="Saumya Jha"
         sections={FOOTER_SECTIONS}
       />
+      <FooterBottom />
     </div>
   );
 }
