@@ -4,46 +4,41 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { Card, CardBody, CardTitle, CardText, CardFooter, CardMedia } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
 
 interface BlogCardProps {
   id: string;
   title: string;
   imageUrl: string;
-  articleUrl : string;
+  articleUrl: string;
 }
 
-export function BlogCard({ id, title, imageUrl, articleUrl }: BlogCardProps) {
+export function BlogCard({ title, imageUrl, articleUrl }: BlogCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       viewport={{ once: true }}
+      className="h-full"
     >
-      <Link href={articleUrl} target="_blank" rel="noopener noreferrer">
-        <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-foreground/50 hover:shadow-lg cursor-pointer">
-          
-          <div className="relative h-48 w-full overflow-hidden bg-muted">
-            <Image
-              src={imageUrl}
-              alt={title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          <div className="p-5 flex flex-col justify-between">
-            <h3 className="text-lg font-semibold leading-tight text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
-              {title}
-            </h3>
-
-            <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-              <span>Read on medium</span>
-              <ExternalLink className="h-3.5 w-3.5" />
-            </div>
-          </div>
-        </div>
+      <Link href={articleUrl} target="_blank" rel="noopener noreferrer" className="block h-full">
+        <Card className="h-full">
+          <CardMedia>
+            <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+          </CardMedia>
+          <CardBody>
+            <CardTitle className="line-clamp-2">{title}</CardTitle>
+            <CardText>Read the full breakdown on Medium.</CardText>
+            <CardFooter>
+              <span className="text-xs text-gray-500 dark:text-gray-400">Medium article</span>
+              <span className={buttonVariants({ variant: "soft", size: "sm" })}>
+                Read <ExternalLink className="h-3.5 w-3.5" />
+              </span>
+            </CardFooter>
+          </CardBody>
+        </Card>
       </Link>
     </motion.div>
   );

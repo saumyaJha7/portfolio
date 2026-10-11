@@ -1,131 +1,106 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { Users, Award , Code} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Card, CardBody, CardTitle, CardText, CardFooter } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
+import { SectionHead } from "@/components/section-head";
+import { Highlight } from "@/components/ui/highlight";
 
 const experiences = [
   {
     role: "Technical Lead",
     organization: "CampusCrafters",
-    period: "March 2026 — Present",
+    period: "Mar 2026 to Present",
     description:
-      "I lead the technical development and architecture of a platform designed to strengthen the campus's growth eco-system.",
-    icon: Users,
-    tags: ["Leadership", "Decision Making", "Ownership"],
+      "Leading technical development and architecture for a platform that supports campus growth.",
+    tags: ["Leadership", "Ownership"],
     liveLink: "https://www.campuscrafters.com/",
     linkedin: "https://www.linkedin.com/company/campuscraftersofficial/",
   },
   {
     role: "Development Lead",
     organization: "AWS Cloud Club I2IT",
-    period: "Feb 2026 — Present",
+    period: "Feb 2026 to Present",
     description:
-      "Leading the development team of the AWS Cloud Club, mentoring members and guiding the creation of cloud-based projects using AWS technologies.",
-    icon: Award,
-    tags: ["AWS", "Cloud Computing", "Ownership"],
+      "Mentoring members and guiding cloud projects built with AWS services and best practices.",
+    tags: ["AWS", "Cloud"],
     liveLink: "https://awscloudclubi2it.xyz/",
     linkedin: "https://www.linkedin.com/company/awsi2it/",
-  }
+  },
 ];
 
 export default function Experiences() {
   return (
-    <section id="experiences" className="py-24 px-6">
-      <div className="mx-auto max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            Experiences
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Roles & leadership.
-          </h2>
-          <Separator className="mt-6 w-12" />
-        </motion.div>
+    <section id="experiences" className="scroll-mt-24 py-16 sm:py-20">
+      <SectionHead title="Roles and leadership">
+        <>
+          Teams where I focus on <Highlight>ownership and mentoring</Highlight> as
+          much as shipping.
+        </>
+      </SectionHead>
 
-        <div className="mt-12 space-y-0">
-          {experiences.map((item, i) => (
-            <motion.div
-              key={item.role}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="relative pl-8 pb-12 last:pb-0"
-            >
-              
-              {i < experiences.length - 1 && (
-                <div className="absolute left-2.75 top-8 bottom-0 w-px bg-border" />
-              )}
-
-              <div className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card">
-                <item.icon className="h-3 w-3 text-muted-foreground" />
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                  <h3 className="text-base font-semibold">{item.role}</h3>
-                  <span className="text-xs text-muted-foreground font-medium">
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {experiences.map((item, i) => (
+          <motion.div
+            key={item.role}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.05 }}
+            viewport={{ once: true }}
+          >
+            <Card className="h-full">
+              <CardBody>
+                <div className="flex flex-col gap-1">
+                  <CardTitle>{item.role}</CardTitle>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    {item.organization}
+                  </p>
+                  <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                     {item.period}
-                  </span>
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground font-medium">
-                  {item.organization}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed pt-1">
-                  {item.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                <CardText>{item.description}</CardText>
+                <div className="flex flex-wrap gap-1.5 pt-1">
                   {item.tags.map((tag) => (
-                    <Badge
+                    <span
                       key={tag}
-                      variant="outline"
-                      className="rounded-full text-[11px] font-normal text-muted-foreground"
+                      className="rounded border border-gray-200 px-2 py-0.5 text-[11px] text-gray-500 dark:border-gray-700 dark:text-gray-400"
                     >
                       {tag}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
-
-                <div className="flex items-center gap-2 pt-3">
-                  {item.liveLink && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
-                      
-                    >
-                      <a href={item.liveLink} target="_blank" rel="noopener noreferrer">
-                        
-                        Live Link
+                <CardFooter>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                    Leadership role
+                  </span>
+                  <div className="flex gap-2">
+                    {item.liveLink && (
+                      <a
+                        href={item.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "soft", size: "sm" })}
+                      >
+                        Live site
                       </a>
-                    </Button>
-                  )}
-                  {item.linkedin && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="h-8 gap-1.5 text-xs rounded-full border-primary/20 hover:border-primary/50"
-                      
-                    >
-                      <a href={item.linkedin} target="_blank" rel="noopener noreferrer">
-                        
+                    )}
+                    {item.linkedin && (
+                      <a
+                        href={item.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "soft", size: "sm" })}
+                      >
                         LinkedIn
                       </a>
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                    )}
+                  </div>
+                </CardFooter>
+              </CardBody>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

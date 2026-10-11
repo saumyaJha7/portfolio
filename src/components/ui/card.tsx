@@ -1,103 +1,67 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
-function Card({
-  className,
-  size = "default",
-  ...props
-}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+/**
+ * The listing card from chaicode.com (routes/udemy UdemyCourseCard): a warm
+ * hairline, a faint fill with a touch of blur, and no shadow. It sits a
+ * little dimmed on wide screens and comes to full on hover; the media zooms
+ * 3% over 300ms.
+ */
+function Card({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="card"
-      data-size={size}
       className={cn(
-        "group/card flex flex-col gap-4 overflow-hidden rounded-xl bg-card py-4 text-sm text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-3 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
-        className
+        'card-chai group relative flex flex-col overflow-hidden text-card-foreground sm:opacity-90 sm:hover:opacity-100 sm:has-focus-visible:opacity-100',
+        className,
       )}
       {...props}
     />
   )
 }
 
-function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+/** An aspect-video frame for the card's image. Pass the <img> as the child. */
+function CardMedia({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
-      data-slot="card-header"
+      data-slot="card-media"
       className={cn(
-        "group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-t-xl px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3",
-        className
+        'relative aspect-video w-full shrink-0 overflow-hidden [&>img]:size-full [&>img]:object-cover [&>img]:transition-transform [&>img]:duration-300 motion-safe:group-hover:[&>img]:scale-[1.03]',
+        className,
       )}
       {...props}
     />
   )
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+function CardBody({ className, ...props }: React.ComponentProps<'div'>) {
+  return <div data-slot="card-body" className={cn('flex min-w-0 flex-1 flex-col gap-1.5 p-4', className)} {...props} />
+}
+
+function CardTitle({ className, ...props }: React.ComponentProps<'h3'>) {
   return (
-    <div
+    <h3
       data-slot="card-title"
-      className={cn(
-        "font-heading text-base leading-snug font-medium group-data-[size=sm]/card:text-sm",
-        className
-      )}
+      className={cn('font-montserrat text-base leading-snug font-semibold text-gray-900 dark:text-gray-50', className)}
       {...props}
     />
   )
 }
 
-function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+function CardText({ className, ...props }: React.ComponentProps<'p'>) {
   return (
-    <div
-      data-slot="card-description"
-      className={cn("text-sm text-muted-foreground", className)}
+    <p
+      data-slot="card-text"
+      className={cn('line-clamp-2 text-xs leading-relaxed text-gray-600 dark:text-gray-400', className)}
       {...props}
     />
   )
 }
 
-function CardAction({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-action"
-      className={cn(
-        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-        className
-      )}
-      {...props}
-    />
-  )
+/** Pinned to the bottom: a note or price on the left, the action on the right. */
+function CardFooter({ className, ...props }: React.ComponentProps<'div'>) {
+  return <div data-slot="card-footer" className={cn('mt-auto flex items-end justify-between gap-3 pt-3', className)} {...props} />
 }
 
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-content"
-      className={cn("px-4 group-data-[size=sm]/card:px-3", className)}
-      {...props}
-    />
-  )
-}
-
-function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-footer"
-      className={cn(
-        "flex items-center rounded-b-xl border-t bg-muted/50 p-4 group-data-[size=sm]/card:p-3",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
-}
+export { Card, CardBody, CardFooter, CardMedia, CardText, CardTitle }

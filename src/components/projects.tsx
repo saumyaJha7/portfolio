@@ -3,15 +3,14 @@
 import { motion } from "framer-motion";
 import {
   Card,
-  CardHeader,
+  CardBody,
   CardTitle,
-  CardDescription,
-  CardContent,
+  CardText,
   CardFooter,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { SectionHead } from "@/components/section-head";
+import { Highlight } from "@/components/ui/highlight";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 
@@ -19,7 +18,7 @@ const projects = [
   {
     title: "DebtGuardian",
     description:
-      "A legal platform for settling debts and consulting with lawyers — helping users navigate debt resolution with expert guidance and streamlined workflows.",
+      "A legal platform for settling debts and consulting with lawyers, with guided workflows and expert help.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     github: "https://github.com/saumyaJha7/debtGuardian",
     live: "https://debt-guardian.vercel.app/",
@@ -27,16 +26,15 @@ const projects = [
   {
     title: "tweetTube",
     description:
-      "A powerful backend project inspired by the best of Twitter and YouTube — built to handle real-time interactions, seamless content delivery, and scalable user engagement.",
+      "A backend project mixing Twitter and YouTube ideas, built for realtime interaction and scalable delivery.",
     tags: ["Express", "Node.js", "MongoDB"],
     github: "https://github.com/saumyaJha7/tweetTube",
     live: "",
   },
-  
   {
     title: "NextJs Auth",
     description:
-      "A production-ready authentication system built entirely in Next.js — featuring secure login, JWT sessions, email verification, and MongoDB-backed user management.",
+      "A production ready auth system in Next.js with secure login, JWT sessions, and email verification.",
     tags: ["Next.js", "JWT", "MongoDB"],
     github: "https://github.com/saumyaJha7/NextJs-Auth",
     live: "",
@@ -44,7 +42,7 @@ const projects = [
   {
     title: "Expense Tracker",
     description:
-      "A simple Python + Notion API project to track daily expenses and maintain a monthly total.This tool helps you record expenses with proper categorization.",
+      "A simple Python and Notion API tool to record daily expenses with clean categorization.",
     tags: ["Python", "Notion API"],
     github: "https://github.com/saumyaJha7/Expense_Tracker_v1",
     live: "",
@@ -53,87 +51,73 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 bg-card/50">
-      <div className="mx-auto max-w-5xl">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            Projects
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Selected work.
-          </h2>
-          <Separator className="mt-6 w-12" />
-        </motion.div>
+    <section id="projects" className="scroll-mt-24 py-16 sm:py-20">
+      <SectionHead title="Selected work">
+        <>
+          Projects built around <Highlight>reliable backend systems</Highlight> and
+          clean product detail.
+        </>
+      </SectionHead>
 
-        {/* Project grid */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="group h-full border border-border bg-card transition-all duration-300 hover:border-foreground/20 hover:shadow-lg hover:shadow-foreground/5">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg font-semibold">
-                      {project.title}
-                    </CardTitle>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                  <CardDescription className="mt-1 leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="outline"
-                        className="rounded-full text-[11px] font-normal text-muted-foreground"
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        {projects.map((project, i) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.05 }}
+            viewport={{ once: true }}
+          >
+            <Card className="h-full">
+              <CardBody>
+                <div className="flex items-start justify-between gap-3">
+                  <CardTitle>{project.title}</CardTitle>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-all duration-200 group-hover:opacity-100" />
+                </div>
+                <CardText>{project.description}</CardText>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded border border-gray-200 px-2 py-0.5 text-[11px] text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <CardFooter>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                    {project.live ? "Live and open source" : "Open source"}
+                  </span>
+                  <div className="flex gap-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "soft", size: "sm" })}
                       >
-                        {tag}
-                      </Badge>
-                    ))}
+                        <GithubIcon className="h-3.5 w-3.5" />
+                        Code
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={buttonVariants({ variant: "soft", size: "sm" })}
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        Live
+                      </a>
+                    )}
                   </div>
-                </CardContent>
-                <CardFooter className="gap-2">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={buttonVariants({ variant: "ghost", size: "sm" }) + " h-8 gap-1.5 text-xs"}
-                    >
-                      <GithubIcon className="h-3.5 w-3.5" />
-                      Code
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={buttonVariants({ variant: "ghost", size: "sm" }) + " h-8 gap-1.5 text-xs"}
-                    >
-                      <ExternalLink className="h-3.5 w-3.5" />
-                      Live
-                    </a>
-                  )}
                 </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+              </CardBody>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

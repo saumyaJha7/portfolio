@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
+import { SectionHead } from "@/components/section-head";
+import { Highlight } from "@/components/ui/highlight";
 import { BlogCard } from "@/components/blog-card";
-
 
 const blogs = [
   {
-    id : "1",
-    title : "How whatsapp works even without internet ?",
-    imageUrl : "/blog02Cover.png",
-    articleUrl : "https://medium.com/@jhasaumya554/how-whatsapp-works-even-without-internet-eedd556f76a0"
+    id: "1",
+    title: "How whatsapp works even without internet?",
+    imageUrl: "/blog02Cover.png",
+    articleUrl: "https://medium.com/@jhasaumya554/how-whatsapp-works-even-without-internet-eedd556f76a0",
   },
   {
     id: "2",
-    title: "Why React is Fast: Understanding React Internals",
+    title: "Why React is fast: understanding React internals",
     imageUrl: "/blog01Cover.png",
     articleUrl: "https://medium.com/@jhasaumya554/why-react-is-fast-understanding-react-internals-ee67e84f1f7a",
   },
@@ -22,33 +22,25 @@ const blogs = [
 
 export default function BlogComingSoon() {
   return (
-    <section id="blog" className="py-24 px-6 bg-card/50">
-      <div className="mx-auto max-w-6xl">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            Blog
-          </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            Thoughts & writing.
-          </h2>
-          <Separator className="mt-6 w-12" />
-        </motion.div>
+    <section id="blog" className="scroll-mt-24 py-16 sm:py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <SectionHead title="Thoughts and writing">
+          <>
+            Short explainers on <Highlight>systems I find interesting</Highlight>,
+            written for builders.
+          </>
+        </SectionHead>
+      </motion.div>
 
-        {/* Blog grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog, index) => (
-            <BlogCard
-              key={blog.id}
-              {...blog}
-            />
-          ))}
-        </div>
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} {...blog} />
+        ))}
       </div>
     </section>
   );

@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider, ThemeScript } from "@/components/theme-provider";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
 
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Portfolio — Full Stack Developer",
+  title: "Portfolio: Full Stack Developer",
   description:
     "2nd Year BE IT Student & Full Stack Developer specializing in backend development, GenAI, cloud, and DevOps.",
   keywords: [
@@ -23,9 +16,9 @@ export const metadata: Metadata = {
     "cloud",
     "devops",
   ],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Saumya Jha" }],
   openGraph: {
-    title: "Portfolio — Full Stack Developer",
+    title: "Portfolio: Full Stack Developer",
     description:
       "2nd Year BE IT Student & Full Stack Developer specializing in backend development, GenAI, cloud, and DevOps.",
     type: "website",
@@ -38,14 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} h-full`}>
+    <html lang="en" suppressHydrationWarning className="dark h-full">
+      <head>
+        <ThemeScript defaultTheme="dark" />
+      </head>
       <body className="min-h-full flex flex-col antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider defaultTheme="dark">
           {children}
           <Analytics />
         </ThemeProvider>
