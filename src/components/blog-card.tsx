@@ -32,7 +32,7 @@ export function BlogCard({ title, imageUrl, articleUrl }: BlogCardProps) {
             <CardTitle className="line-clamp-2">{title}</CardTitle>
             <CardText>Read the full breakdown on Medium.</CardText>
             <CardFooter>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Medium article</span>
+              <span className="text-xs text-gray-600 dark:text-gray-400">Medium article</span>
               <span className={buttonVariants({ variant: "soft", size: "sm" })}>
                 Read <ExternalLink className="h-3.5 w-3.5" />
               </span>

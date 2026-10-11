@@ -41,7 +41,7 @@ export function Footer({
             <div className="relative mb-6 shrink-0">{logo}</div>
             <span className="text-sm leading-none tracking-tight whitespace-nowrap text-black dark:text-white">{tagline}</span>
           </div>
-          <div className="mt-4 flex flex-wrap gap-x-1 gap-y-2 text-[13px] leading-none tracking-tight text-gray-500">
+          <div className="mt-4 flex flex-wrap gap-x-1 gap-y-2 text-[13px] leading-none tracking-tight text-gray-600 dark:text-gray-500">
             <p>
               © {new Date().getFullYear()} {owner}.
             </p>
@@ -59,7 +59,7 @@ export function Footer({
                     <a
                       href={link.href}
                       {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="relative flex items-center gap-2 text-[15px] leading-none tracking-tight whitespace-nowrap text-gray-500 transition-colors duration-200 hover:text-brand dark:text-gray-400 dark:hover:text-brand [&_svg]:size-4 [&_svg]:opacity-70"
+                      className="relative flex items-center gap-2 text-[15px] leading-none tracking-tight whitespace-nowrap text-gray-600 transition-colors duration-200 hover:text-brand dark:text-gray-400 dark:hover:text-brand [&_svg]:size-4 [&_svg]:opacity-70"
                     >
                       {link.icon}
                       {link.label}

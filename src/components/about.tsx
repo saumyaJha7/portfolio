@@ -110,7 +110,7 @@ export default function About() {
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="rounded border border-gray-200 px-2.5 py-1 text-xs text-gray-600 dark:border-gray-700 dark:text-gray-400"
+              className="rounded border border-gray-300 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-400"
             >
               {tech}
             </span>

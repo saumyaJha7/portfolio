@@ -139,7 +139,7 @@ const navLink =
 const menuItem =
   'flex items-start gap-3 rounded-lg px-3 py-2 outline-none transition-colors duration-150 hover:bg-accent/60 hover:text-brand focus-visible:bg-accent/60 focus-visible:text-brand aria-[current=page]:bg-accent/60'
 
-const panel = 'rounded-xl border border-gray-400/20 bg-background/80 p-2 backdrop-blur-lg dark:border-orange-50/10'
+const panel = 'rounded-xl border border-gray-400/40 bg-background/95 p-2 shadow-sm backdrop-blur-lg dark:border-orange-50/10 dark:bg-background/80 dark:shadow-none'
 
 /** chaicode.com's single menu: every link behind the morphing button. */
 function MenuDropdown({ links }: { links: NavLink[] }) {

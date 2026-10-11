@@ -64,14 +64,14 @@ export default function Experiences() {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded border border-gray-200 px-2 py-0.5 text-[11px] text-gray-500 dark:border-gray-700 dark:text-gray-400"
+                      className="rounded border border-gray-300 px-2 py-0.5 text-[11px] text-gray-600 dark:border-gray-700 dark:text-gray-400"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 <CardFooter>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                  <span className="text-xs text-gray-600 dark:text-gray-400">
                     Leadership role
                   </span>
                   <div className="flex gap-2">
