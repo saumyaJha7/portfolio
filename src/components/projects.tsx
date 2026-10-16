@@ -49,10 +49,15 @@ const projects = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ limit }: { limit?: number } = {}) {
+  const visible = typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const isPreview = typeof limit === "number";
   return (
     <section id="projects" className="scroll-mt-24 py-16 sm:py-20">
-      <SectionHead title="Selected work">
+      <SectionHead
+        title="Selected work"
+        action={isPreview ? { label: "View all", href: "/projects" } : undefined}
+      >
         <>
           Projects built around <Highlight>reliable backend systems</Highlight> and
           clean product detail.
@@ -60,7 +65,7 @@ export default function Projects() {
       </SectionHead>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {projects.map((project, i) => (
+        {visible.map((project, i) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 20 }}

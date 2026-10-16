@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider, ThemeScript } from "@/components/theme-provider";
+import { SiteShell } from "@/components/site-shell";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
 
@@ -37,7 +38,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider defaultTheme="dark">
-          {children}
+          <SiteShell>{children}</SiteShell>
           <Analytics />
         </ThemeProvider>
       </body>

@@ -7,11 +7,6 @@ import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import { FloatingDockContainer } from "@/components/ui/floating-dock-container";
 
 export default function SiteHero() {
-  const handleScroll = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       id="home"
@@ -57,20 +52,16 @@ export default function SiteHero() {
           transition={{ duration: 0.5, delay: 0.45 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <Button
-            size="lg"
-            className="rounded-full px-8 font-medium"
-            onClick={() => handleScroll("#projects")}
-          >
-            View Projects
+          <Button size="lg" className="rounded-full px-8 font-medium" asChild>
+            <a href="/projects">View Projects</a>
           </Button>
           <Button
             variant="outline"
             size="lg"
             className="rounded-full px-8 font-medium"
-            onClick={() => handleScroll("#contact")}
+            asChild
           >
-            Contact Me
+            <a href="/#contact">Contact Me</a>
           </Button>
         </motion.div>
 

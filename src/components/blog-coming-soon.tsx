@@ -20,7 +20,9 @@ const blogs = [
   },
 ];
 
-export default function BlogComingSoon() {
+export default function BlogComingSoon({ limit }: { limit?: number } = {}) {
+  const visible = typeof limit === "number" ? blogs.slice(0, limit) : blogs;
+  const isPreview = typeof limit === "number";
   return (
     <section id="blog" className="scroll-mt-24 py-16 sm:py-20">
       <motion.div
@@ -29,7 +31,10 @@ export default function BlogComingSoon() {
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
       >
-        <SectionHead title="Thoughts and writing">
+        <SectionHead
+          title="Thoughts and writing"
+          action={isPreview ? { label: "View all", href: "/blog" } : undefined}
+        >
           <>
             Short explainers on <Highlight>systems I find interesting</Highlight>,
             written for builders.
@@ -38,7 +43,7 @@ export default function BlogComingSoon() {
       </motion.div>
 
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {blogs.map((blog) => (
+        {visible.map((blog) => (
           <BlogCard key={blog.id} {...blog} />
         ))}
       </div>
