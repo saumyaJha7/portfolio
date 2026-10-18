@@ -4,7 +4,6 @@ import Experiences from "@/components/experiences";
 import BlogComingSoon from "@/components/blog-coming-soon";
 import Books from "@/components/books";
 import About from "@/components/about";
-import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <BlogComingSoon limit={2} />
       <Books />
       <About />
-      <Contact />
     </>
   );
 }

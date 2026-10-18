@@ -35,7 +35,7 @@ export function Footer({
         className,
       )}
     >
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-start gap-x-16 gap-y-8 pt-10 pb-[51px] sm:py-8 lg:flex-row lg:justify-center lg:items-start lg:pb-9 xl:pt-9">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-x-16 gap-y-8 pt-6 pb-[51px] sm:py-6 lg:flex-row lg:justify-between lg:items-start lg:pb-9 xl:pt-6">
         <div className="flex flex-col items-start justify-between lg:max-w-sm">
           <div className="flex flex-1 flex-col items-start justify-between">
             <div className="relative mb-6 shrink-0">{logo}</div>

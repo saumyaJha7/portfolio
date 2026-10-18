@@ -61,7 +61,7 @@ export default function SiteHero() {
             className="rounded-full px-8 font-medium"
             asChild
           >
-            <a href="/#contact">Contact Me</a>
+            <a href="mailto:saumyajha.error@gmail.com">Contact Me</a>
           </Button>
         </motion.div>
 

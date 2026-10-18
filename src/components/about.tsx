@@ -33,7 +33,7 @@ const techStack = [
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-16 sm:py-20">
+    <section id="about" className="scroll-mt-24 pt-16 pb-4 sm:pt-20 sm:pb-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

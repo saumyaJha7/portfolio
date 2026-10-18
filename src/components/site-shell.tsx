@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog" },
   { label: "Books", href: "/#books" },
   { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 const FOOTER_SECTIONS = [
@@ -28,7 +27,6 @@ const FOOTER_SECTIONS = [
     links: [
       { label: "Books", href: "/#books" },
       { label: "About", href: "/#about" },
-      { label: "Contact", href: "/#contact" },
     ],
   },
   {
