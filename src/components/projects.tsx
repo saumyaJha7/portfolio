@@ -16,6 +16,30 @@ import { GithubIcon } from "@/components/icons";
 
 const projects = [
   {
+    title: "LeetLab",
+    description:
+      "A LeetCode-inspired mobile app for practicing problems, with in-app editing (JS, Python, Java) and submissions judged against hidden test cases.",
+    tags: ["Expo", "React Native", "TypeScript", "Supabase"],
+    github: "https://github.com/saumyaJha7/LeetLab",
+    live: "",
+  },
+  {
+    title: "Meeting Scheduler — Jarvis Agent",
+    description:
+      "A voice-enabled AI meeting assistant that pairs a real-time ElevenLabs agent with Google Calendar to check slots and schedule meetings conversationally.",
+    tags: ["Expo", "ElevenLabs", "Google Calendar", "SQLite"],
+    github: "https://github.com/saumyaJha7/Meeting-Scheduler-Jarvis-Agent",
+    live: "",
+  },
+  {
+    title: "AI Study Buddy",
+    description:
+      "A NotebookLM-style study assistant. Upload a PDF or URL to get summaries, flashcards, and an AI chat over your own material.",
+    tags: ["TypeScript", "GenAI", "RAG"],
+    github: "https://github.com/saumyaJha7/AI__study_buddy",
+    live: "",
+  },
+  {
     title: "DebtGuardian",
     description:
       "A legal platform for settling debts and consulting with lawyers, with guided workflows and expert help.",

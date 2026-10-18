@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <SiteHero />
-      <Projects limit={2} />
+      <Projects limit={4} />
       <Experiences />
       <BlogComingSoon limit={2} />
       <Books />
