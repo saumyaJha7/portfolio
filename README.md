@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Minimal Portfolio
+
+A minimal, dark-themed developer portfolio built with Next.js 16, React 19, and Tailwind CSS 4. Showcases projects, experience, writing, reading, and contact details with smooth animations.
+
+## About
+
+Saumya Jha — 2nd Year BE IT student and full-stack developer, backend-focused, working on scalable systems, GenAI, cloud, and DevOps. Open to opportunities.
+
+- Portfolio: [saumyajha.xyz](https://www.saumyajha.xyz/)
+- GitHub: [@JhaSaumya](https://github.com/JhaSaumya)
+- Email: saumyajha.error@gmail.com
+
+## Features
+
+- **Hero** — animated intro with a rotating focus line (backend systems, distributed architectures, AI-integrated apps, production infrastructure) and quick links.
+- **Selected projects** — DebtGuardian, tweetTube, NextJs Auth, Expense Tracker, each with code/live links.
+- **Roles & leadership** — Technical Lead at CampusCrafters, Development Lead at AWS Cloud Club I2IT.
+- **Writing** — short explainers on systems (e.g. "How WhatsApp works even without internet", "Why React is fast").
+- **Books** — recommended reads with 3D cover hover effect.
+- **About** — skills and tech stack (React/Next.js, Node.js/Express, MongoDB/PostgreSQL, GenAI & LLMs, Cloud & AWS).
+- **Contact** — email and social links (GitHub, LinkedIn, Twitter).
+- **Theming** — dark by default with a theme switcher; Vercel Analytics integrated.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router), React 19
+- **Styling:** Tailwind CSS 4, tw-animate-css, shadcn/ui (base-ui + radix)
+- **Animation:** Framer Motion, Motion
+- **Fonts:** Geist Mono, Manrope, Montserrat, Onest (via @fontsource-variable)
+- **Icons:** Lucide, Tabler
+- **Analytics:** @vercel/analytics
+- **Language:** TypeScript 5
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — start development server
+- `npm run build` — production build
+- `npm run start` — start production server
+- `npm run lint` — run ESLint
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/            # Next.js App Router pages (home, projects, blog)
+  components/     # Section components (hero, projects, experiences, books, about, contact, ...)
+  components/ui/  # Reusable UI primitives (button, card, badge, highlight, ...)
+  lib/            # Utilities
+public/           # Static assets (images, book covers, blog covers)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deployed on Vercel. See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for details.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Building, experimenting, and understanding systems one layer at a time.*
