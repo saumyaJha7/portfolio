@@ -28,14 +28,14 @@ export function Footer({
   return (
     <footer
       className={cn(
-        'relative z-10 mx-auto w-full px-6 py-2 font-montserrat sm:px-12',
+        'relative z-10 mx-auto w-full max-w-6xl px-6 py-2 font-montserrat sm:px-12',
         'before:absolute before:top-0 before:left-1/2 before:h-px before:w-full before:max-w-[1440px] before:-translate-x-1/2 before:opacity-10',
         'before:[mask-image:linear-gradient(90deg,transparent_0%,black_40%,black_60%,transparent_100%)]',
         'before:bg-amber-600 dark:before:bg-orange-300',
         className,
       )}
     >
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-x-16 gap-y-8 pt-6 pb-[51px] sm:py-6 lg:flex-row lg:justify-between lg:items-start lg:pb-9 xl:pt-6">
+      <div className="relative flex w-full flex-col items-start gap-x-16 gap-y-8 pt-6 pb-[51px] sm:py-6 lg:flex-row lg:justify-between lg:items-start lg:pb-9 xl:pt-6">
         <div className="flex flex-col items-start justify-between lg:max-w-sm">
           <div className="flex flex-1 flex-col items-start justify-between">
             <div className="relative mb-6 shrink-0">{logo}</div>

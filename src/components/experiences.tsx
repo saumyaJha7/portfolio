@@ -8,9 +8,9 @@ import { Highlight } from "@/components/ui/highlight";
 
 const experiences = [
   {
-    role: "Technical Lead",
+    role: "Founding Engineer",
     organization: "CampusCrafters",
-    period: "Mar 2026 to Present",
+    period: "Mar 2026 – Sept 2026",
     description:
       "Leading technical development and architecture for a platform that supports campus growth.",
     tags: ["Leadership", "Ownership"],
@@ -19,8 +19,8 @@ const experiences = [
   },
   {
     role: "Development Lead",
-    organization: "AWS Cloud Club I2IT",
-    period: "Feb 2026 to Present",
+    organization: "AWS Student Builder Group",
+    period: "Feb 2026 – Present",
     description:
       "Mentoring members and guiding cloud projects built with AWS services and best practices.",
     tags: ["AWS", "Cloud"],
@@ -55,25 +55,22 @@ export default function Experiences() {
                   <p className="text-sm font-medium text-muted-foreground">
                     {item.organization}
                   </p>
-                  <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                  <p className="text-[11px] font-normal tracking-wide text-muted-foreground/70 uppercase">
                     {item.period}
                   </p>
                 </div>
                 <CardText>{item.description}</CardText>
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded border border-gray-300 px-2 py-0.5 text-[11px] text-gray-600 dark:border-gray-700 dark:text-gray-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <CardFooter>
-                  <span className="text-xs text-gray-600 dark:text-gray-400">
-                    Leadership role
-                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded border border-gray-300 px-2 py-0.5 text-[11px] text-gray-600 dark:border-gray-700 dark:text-gray-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex gap-2">
                     {item.liveLink && (
                       <a
