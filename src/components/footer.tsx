@@ -35,8 +35,8 @@ export function Footer({
         className,
       )}
     >
-      <div className="relative mx-auto flex flex-col justify-between gap-x-10 gap-y-8 pt-10 pb-[51px] sm:py-8 lg:flex-row lg:pb-9 xl:pt-9">
-        <div className="flex flex-col items-start justify-between lg:w-full lg:max-w-sm">
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-start gap-x-16 gap-y-8 pt-10 pb-[51px] sm:py-8 lg:flex-row lg:justify-center lg:items-start lg:pb-9 xl:pt-9">
+        <div className="flex flex-col items-start justify-between lg:max-w-sm">
           <div className="flex flex-1 flex-col items-start justify-between">
             <div className="relative mb-6 shrink-0">{logo}</div>
             <span className="text-sm leading-none tracking-tight whitespace-nowrap text-black dark:text-white">{tagline}</span>
@@ -49,7 +49,7 @@ export function Footer({
           </div>
         </div>
 
-        <div className="mt-2 grid w-full grid-cols-2 justify-between gap-8 sm:grid-cols-4 sm:gap-4">
+        <div className="mt-2 grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-x-16 sm:gap-y-8">
           {sections.map((section) => (
             <nav key={section.title} aria-label={section.title} className={cn('flex flex-col', section.wide ? 'col-span-2' : 'col-span-1')}>
               <h2 className="relative mb-6 text-xs leading-none font-semibold tracking-normal text-gray-800 uppercase dark:text-white">{section.title}</h2>

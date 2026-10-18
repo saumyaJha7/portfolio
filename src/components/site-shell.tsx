@@ -33,7 +33,6 @@ const FOOTER_SECTIONS = [
   },
   {
     title: "Social",
-    wide: true,
     links: [
       { label: "GitHub", href: "https://github.com/saumyaJha7", external: true },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/jhasaumya/", external: true },
@@ -61,13 +60,13 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col p-6 sm:p-12">
         {children}
       </main>
+      <FooterBottom />
       <Footer
         logo={<SiteLogo />}
         tagline="Full stack developer building reliable systems"
         owner="Saumya Jha"
         sections={FOOTER_SECTIONS}
       />
-      <FooterBottom />
     </div>
   );
 }
