@@ -6,7 +6,6 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 import { MenuGlyph, MenuToggle, menuToggleClass } from '@/components/menu-toggle'
-import { ThemeSwitcher } from '@/components/theme-switcher'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
 export type NavLink = { label: string; href: string; external?: boolean; icon?: React.ReactNode }
@@ -83,7 +82,6 @@ export function Navbar({
 
         <div className="flex items-center gap-2 lg:gap-4">
           {actions}
-          <ThemeSwitcher />
           {layout === 'menu' ? (
             <MenuDropdown links={links} />
           ) : (

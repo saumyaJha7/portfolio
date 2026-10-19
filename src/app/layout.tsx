@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ThemeProvider, ThemeScript } from "@/components/theme-provider";
 import { SiteShell } from "@/components/site-shell";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
@@ -32,15 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark h-full">
-      <head>
-        <ThemeScript defaultTheme="dark" />
-      </head>
+    <html lang="en" className="dark h-full">
       <body className="min-h-full flex flex-col antialiased">
-        <ThemeProvider defaultTheme="dark">
-          <SiteShell>{children}</SiteShell>
-          <Analytics />
-        </ThemeProvider>
+        <SiteShell>{children}</SiteShell>
+        <Analytics />
       </body>
     </html>
   );
