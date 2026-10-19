@@ -4,7 +4,7 @@ A minimal, dark-themed developer portfolio built with Next.js 16, React 19, and 
 
 ## About
 
-Saumya Jha — 2nd Year BE IT student and full-stack developer, backend-focused, working on scalable systems, GenAI, cloud, and DevOps. Open to opportunities.
+Saumya Jha — 3rd Year BE IT student and Mobile App Developer , backend engineer, working on scalable systems, GenAI, cloud, and DevOps. Open to opportunities.
 
 - Portfolio: [saumyajha.xyz](https://www.saumyajha.xyz/)
 - GitHub: [@JhaSaumya](https://github.com/JhaSaumya)
